@@ -56,3 +56,33 @@ Now that the robot model and simulation are set up, you need to create a new ROS
 ```bash
 ros2 pkg create --build-type ament_python move_turtle
 ```
+### 6. Write the ROS2 Node for Movement
+
+Inside the `move_turtle` package, create a Python script called `move_turtle.py` to control the robot’s movement in the simulation. The script will publish `Twist` messages to the `/cmd_vel` topic, which will control the robot’s velocity.
+
+### 7. Build the Package
+
+Once the script is created, go back to the workspace directory and build the package:
+
+```bash
+cd ~/ros2_ws
+colcon build --packages-select move_turtle
+```
+### 8. Source the Workspace
+
+Once the package is built, source the workspace to ensure the package is available to ROS2. Run the following command:
+
+```bash
+source install/setup.bash
+```
+### 9. Run the ROS2 Node
+
+After sourcing the workspace, execute the following command to run the ROS2 node and start moving the robot in the Gazebo simulation:
+
+```bash
+ros2 run move_turtle move_turtle.py
+```
+## Conclusion
+
+By following these steps, the robot has been successfully set up and controlled in the Gazebo simulation using ROS2. The robot now moves autonomously in the simulation, replicating the behavior previously created with the `turtlesim` package.
+
