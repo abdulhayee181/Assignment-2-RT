@@ -49,16 +49,16 @@ To launch the simulation environment and spawn the robot at the starting coordin
 ```bash
 ros2 launch gazebo.launch.py
 ```
-### 5. Create a ROS2 Package for Robot Control
+### 5. ROS2 Package for Robot Control
 
-Now that the robot model and simulation are set up, you need to create a new ROS2 package to handle the movement of the robot. Use the following command to create a new Python-based ROS2 package:
+Now that the robot model and simulation are set up, I have created a new ROS2 package to handle the movement of the robot. Using this command:
 
 ```bash
 ros2 pkg create --build-type ament_python move_turtle
 ```
-### 6. Write the ROS2 Node for Movement
+### 6. ROS2 Node for Movement
 
-Inside the `move_turtle` package, create a Python script called `move_turtle.py` to control the robot’s movement in the simulation. The script will publish `Twist` messages to the `/cmd_vel` topic, which will control the robot’s velocity.
+Inside the `move_turtle` package, there is  a Python script called `move_turtle.py` to control the robot’s movement in the simulation. The script will publish `Twist` messages to the `/cmd_vel` topic, which will control the robot’s velocity.
 
 ### 7. Build the Package
 
